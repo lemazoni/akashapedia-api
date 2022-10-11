@@ -1,6 +1,6 @@
 console.log(process.env.DB_HOST);
 module.exports = {
-  "type": "mysql",
+  "type": "postgress",
   "host": process.env.HOST,
   "port": process.env.PORT,
   "synchronize": false,
