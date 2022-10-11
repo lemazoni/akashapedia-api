@@ -1,22 +1,17 @@
-console.log(process.env.DB_HOST);
+console.log('process.env.DATABASEE_URL :>> ', process.env.DATABASE_URL);
 module.exports = {
-  "type": "mysql",
-  "host": process.env.HOST,
-  "port": process.env.PORT,
-  "synchronize": false,
-  "username": process.env.DB_USER,
-  "password": process.env.DB_PASS,
-  "database": process.env.DATABASE,
+  "type": "postgres",
+  "url": process.env.DATABASE_URL,
   "entities": [
     "dist/models/**/*.js"
- ],
- "migrations": [
-  "dist/migrations/**/*.js"
-],
- "cli":{
-  "migrationsDir": [
-    "src/database/migrations/"
   ],
-  "entitiesDir": "src/models"
+  "migrations": [
+    "dist/database/migrations/**/*.js"
+  ],
+  "cli":{
+    "migrationsDir": [
+      "src/database/migrations/"
+    ],
+    "entitiesDir": "src/models"
   }
 }
