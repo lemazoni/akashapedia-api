@@ -1,12 +1,12 @@
-console.log(process.env.DB_HOST);
+console.log(process.env.Host);
 module.exports = {
   "type": "postgress",
-  "host": process.env.HOST,
-  "port": process.env.PORT,
+  "host": process.env.Host,
+  "port": process.env.Port,
   "synchronize": false,
-  "username": process.env.DB_USER,
-  "password": process.env.DB_PASS,
-  "database": process.env.DATABASE,
+  "username": process.env.Username,
+  "password": process.env.Password,
+  "database": process.env.Database,
   "entities": [
     "dist/models/**/*.js"
  ],
