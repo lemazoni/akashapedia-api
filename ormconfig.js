@@ -6,10 +6,10 @@ module.exports = {
   "password": "b27bad24",
   "database": "heroku_d4bb46ee197b208",
   "entities": [
-    "dist/models/**/*.js"
+    "src/models/**/*{.ts,.js}"
   ],
   "migrations": [
-    "dist/database/migrations/**/*.js"
+    "src/database/migrations/**/*{.ts,.js}"
   ],
   "cli":{
     "migrationsDir": [
