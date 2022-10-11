@@ -1,12 +1,12 @@
-console.log(process.env.Host);
+console.log(process.env.DB_HOST);
 module.exports = {
   "type": "mysql",
-  "host": process.env.Host,
-  "port": process.env.Port,
+  "host": process.env.HOST,
+  "port": process.env.PORT,
   "synchronize": false,
-  "username": process.env.Username,
-  "password": process.env.Password,
-  "database": process.env.Database,
+  "username": process.env.DB_USER,
+  "password": process.env.DB_PASS,
+  "database": process.env.DATABASE,
   "entities": [
     "dist/models/**/*.js"
  ],
