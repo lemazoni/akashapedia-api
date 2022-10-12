@@ -1,20 +1,21 @@
 import { AppDataSource } from "./data-source"
 import { User } from "./entity/User"
+import { createExpressServer } from 'routing-controllers';
+import { UserController } from './controller/UserController';
+
 
 AppDataSource.initialize().then(async () => {
 
-    console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.firstName = "Timber"
-    user.lastName = "Saw"
-    user.age = 25
-    await AppDataSource.manager.save(user)
-    console.log("Saved a new user with id: " + user.id)
 
-    console.log("Loading users from the database...")
-    const users = await AppDataSource.manager.find(User)
-    console.log("Loaded users: ", users)
+// creates express app, registers all controller routes and returns you express app instance
+    const app = createExpressServer({
+        controllers: [UserController], // we specify controllers we want to use
+    });
 
-    console.log("Here you can setup and run express / fastify / any other framework.")
+// run express application on port 3000
+
+    app.listen(3000, () => {
+        console.log(`⚡️[server]: Server is running at 3000`);
+    });
 
 }).catch(error => console.log(error))
