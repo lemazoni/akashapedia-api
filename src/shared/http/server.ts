@@ -37,6 +37,6 @@ app.use(
 );
 
 
-app.listen(3333, () =>{
+app.listen(3000, () =>{
     console.log(`⚡️[server]: Server is running at 3333`);
 });
