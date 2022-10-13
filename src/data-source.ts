@@ -1,17 +1,16 @@
-import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { User } from "./entity/User"
+import {DataSource} from "typeorm";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "root",
-    database: "akashapedia-api",
+    port: 3308,
+    username: "lemazoni",
+    password: "docker",
+    database: "myDB",
     synchronize: true,
-    logging: false,
-    entities: [User],
-    migrations: [],
+    logging: true,
+    entities: ["./src/modules/**/typeorm/entities/*.ts"],
     subscribers: [],
+    migrations: [ "./src/shared/typeorm/migrations/*.ts" ],
+    
 })
