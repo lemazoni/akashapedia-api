@@ -19,7 +19,7 @@ class  Character {
     stars: number;
 
     @Column()
-    logo: string;
+    icon: string;
 
     @CreateDateColumn()
     created_at: Date;
