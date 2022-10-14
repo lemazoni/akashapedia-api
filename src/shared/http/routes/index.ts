@@ -1,8 +1,8 @@
 import  {Router} from 'express';
-import productsRouter from "@modules/products/routes/products.routes";
+import characterRouter from "@modules/characters/routes/characters.routes";
 
 const routes = Router();
 
-routes.use('/products', productsRouter);
+routes.use('/characters', characterRouter)
 
 export  default  routes;

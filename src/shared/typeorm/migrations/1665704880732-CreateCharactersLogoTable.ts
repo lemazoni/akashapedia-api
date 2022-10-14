@@ -11,6 +11,7 @@ export class CreateCharactersLogoTable1665704880732 implements MigrationInterfac
                     type: 'varchar',
                     isPrimary: true,
                     generationStrategy: 'uuid',
+                    default: ''
                 },
                 {
                     name: 'name',

@@ -38,5 +38,5 @@ app.use(
 
 
 app.listen(3000, () =>{
-    console.log(`⚡️[server]: Server is running at 3333`);
+    console.log(`⚡️[server]: Server is running at 3000`);
 });
