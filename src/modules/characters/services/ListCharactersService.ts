@@ -11,9 +11,9 @@ interface IRequest{
 }
 
 class ListCharactersService {
-    public async execute(): Promise<Character[]>{
+    public async execute(filter: IRequest): Promise<Character[]>{
         const charactersRepository = CharactersRepository;
-        const characters = await charactersRepository.find();
+        const characters = await charactersRepository.getCharactersList(filter);
         return characters;
     }
 }
