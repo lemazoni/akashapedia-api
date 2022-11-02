@@ -33,6 +33,8 @@ export const CharactersRepository = AppDataSource.getRepository(Character).exten
 
     getCharacterDetails(id: string){
         const query = this.createQueryBuilder("character");
-        return query.where('character.id =:id', {id: id}).leftJoinAndSelect('character.status', 'status').getOne();
+        return query.where('character.id =:id', {id: id})
+            .leftJoinAndSelect('character.status', 'status')
+            .leftJoinAndSelect('character.details', 'details').getOne();
     }
 });
