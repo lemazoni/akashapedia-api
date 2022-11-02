@@ -1,4 +1,13 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    JoinColumn,
+    OneToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
+} from "typeorm";
+import Status from "@modules/characters/typeorm/entities/Status";
 
 @Entity('characters')
 class  Character {
@@ -21,11 +30,17 @@ class  Character {
     @Column()
     icon: string;
 
+    @OneToOne(()=> Status)
+    @JoinColumn()
+    status: Status;
+
     @CreateDateColumn()
     created_at: Date;
 
     @UpdateDateColumn()
     updated_at: Date;
+
+
 }
 
 export  default  Character
