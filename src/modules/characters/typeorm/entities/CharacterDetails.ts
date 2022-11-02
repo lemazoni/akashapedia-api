@@ -8,37 +8,30 @@ import {
     UpdateDateColumn
 } from "typeorm";
 import Status from "@modules/characters/typeorm/entities/Status";
-import CharacterDetails from "@modules/characters/typeorm/entities/CharacterDetails";
 
-@Entity('characters')
-class  Character {
+@Entity('charactersDetails')
+class  CharacterDetails {
 
     @PrimaryGeneratedColumn('uuid')
     id:string;
 
     @Column()
-    name: string;
+    splash: string;
 
     @Column()
-    vision: string;
+    title: string;
 
     @Column()
-    weapon: string;
-
-    @Column('int')
-    stars: number;
+    ocupation: string;
 
     @Column()
-    icon: string;
+    birthday: Date;
 
+    @Column()
+    flavor_text: string;
 
-    @OneToOne(()=> Status)
-    @JoinColumn()
-    status: Status;
-
-    @OneToOne(()=> CharacterDetails)
-    @JoinColumn()
-    details: CharacterDetails;
+    @Column()
+    association: string;
 
     @CreateDateColumn()
     created_at: Date;
@@ -49,4 +42,4 @@ class  Character {
 
 }
 
-export  default  Character
+export  default  CharacterDetails
