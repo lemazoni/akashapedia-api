@@ -6,6 +6,7 @@ import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import {errors} from  'celebrate';
 import {AppDataSource} from "../../data-source";
+import Status from "@modules/characters/typeorm/entities/Status";
 const app = express();
 
 const MyDataSource = AppDataSource;
@@ -38,5 +39,6 @@ app.use(
 
 
 app.listen(3000, () =>{
+
     console.log(`⚡️[server]: Server is running at 3000`);
 });

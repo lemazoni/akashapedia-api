@@ -1,5 +1,6 @@
 import {Request, Response} from "express";
 import ListCharactersService from "@modules/characters/services/ListCharactersService";
+import GetCharacterService from "@modules/characters/services/GetCharacterService";
 
 
 interface IRequest{
@@ -11,6 +12,12 @@ interface IRequest{
 
 export default class CharactersController {
 
+    public  async getCharacter(request: Request, response: Response): Promise<Response> {
+        let id = request.params.characterId;
+        const characterRepo = new GetCharacterService();
+        const character = await characterRepo.execute(id);
+        return response.json(character);
+    }
 
     public async show(request: Request, response: Response): Promise<Response> {
         let name = '';

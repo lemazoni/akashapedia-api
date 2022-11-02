@@ -27,6 +27,12 @@ export const CharactersRepository = AppDataSource.getRepository(Character).exten
         if(filter.stars != 0){
             query.andWhere('character.stars =:stars', {stars: filter.stars})
         }
+        query.orderBy('character.name', "ASC" );
         return query.getMany()
+    },
+
+    getCharacterDetails(id: string){
+        const query = this.createQueryBuilder("character");
+        return query.where('character.id =:id', {id: id}).leftJoinAndSelect('character.status', 'status').getOne();
     }
 });
